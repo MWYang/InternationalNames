@@ -27,11 +27,20 @@ for row in jrc.alias.str.lower().str.split('+').str[0:]:
                 last_name_dict.add(new_name)
             name_dict.add(new_name)
 
-# Load a list of top 1000 English words, to be removed from the JRC dataset
-NUM_TOP = 5000
+# Load a list of top 10000 English words, to be removed from the JRC dataset
+NUM_TOP = None
 english_words = set(pd.read_csv('input/google-10000-english.txt', header=None, nrows=NUM_TOP)[0].values)
 america_words = set(pd.read_csv('input/google-10000-english-usa.txt', header=None, nrows=NUM_TOP)[0].values)
 top_words = english_words | america_words
+# ... But we also need to remove words from this data that themselves are names. To do that,
+# we'll use a cleaner source of names (but with less coverage): US/UK government birth registries
+us = pd.read_csv('input/usprocessed.csv')
+uk = pd.read_csv('input/ukprocessed.csv', error_bad_lines=False)
+combined = pd.concat([us.Name, uk.Name])
+for name in combined:
+    name = name.lower()
+    if name in top_words:
+        top_words.remove(name)
 
 # Clean entries
 CUSTOM = ['', 'nan', 'male']
@@ -53,7 +62,7 @@ for c in REMOVE_LIST:
         continue
 
 print(f"Number of words removed: {len(removed)}")
-print(removed)
+pd.DataFrame.from_dict({'removed': removed}).to_csv('output/RemovedWords.txt', header=None, index=None, sep=' ')
 
 # Combine the entries by unioning over the sets
 # name_dict = first_name_dict | last_name_dict

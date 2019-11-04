@@ -1,0 +1,2 @@
+rm input/*
+rm output/*

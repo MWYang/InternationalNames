@@ -1,5 +1,5 @@
 # Ignore raw data download
-input/JRCRawData.txt
+input/*
 
 # MacOS crap
 *.DS_Store

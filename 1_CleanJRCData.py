@@ -27,17 +27,33 @@ for row in jrc.alias.str.lower().str.split('+').str[0:]:
                 last_name_dict.add(new_name)
             name_dict.add(new_name)
 
+# Load a list of top 1000 English words, to be removed from the JRC dataset
+NUM_TOP = 5000
+english_words = set(pd.read_csv('input/google-10000-english.txt', header=None, nrows=NUM_TOP)[0].values)
+america_words = set(pd.read_csv('input/google-10000-english-usa.txt', header=None, nrows=NUM_TOP)[0].values)
+top_words = english_words | america_words
 
-# Clean entries a bit
+# Clean entries
 CUSTOM = ['', 'nan', 'male']
-REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + CUSTOM
+REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + list(top_words) + CUSTOM
+removed = []
 for c in REMOVE_LIST:
     try:
-        first_name_dict.remove(c)
-        last_name_dict.remove(c)
         name_dict.remove(c)
+        removed.append(c)
+    except KeyError as e:
+        pass
+    try:
+        first_name_dict.remove(c)
+    except KeyError as e:
+        pass
+    try:
+        last_name_dict.remove(c)
     except KeyError as e:
         continue
+
+print(f"Number of words removed: {len(removed)}")
+print(removed)
 
 # Combine the entries by unioning over the sets
 # name_dict = first_name_dict | last_name_dict

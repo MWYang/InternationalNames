@@ -36,11 +36,25 @@ top_words = english_words | america_words
 # we'll use a cleaner source of names (but with less coverage): US/UK government birth registries
 us = pd.read_csv('input/usprocessed.csv')
 uk = pd.read_csv('input/ukprocessed.csv', error_bad_lines=False)
-combined = pd.concat([us.Name, uk.Name])
-for name in combined:
+combined = pd.concat([us, uk]).groupby('Name').agg({
+    'years.appearing': 'sum',
+    'count.male': 'sum',
+    'count.female': 'sum',
+    'prob.gender': 'first',
+    'obs.male': 'mean',
+    'est.male': 'mean',
+    'upper': 'mean',
+    'lower': 'mean'
+}).reset_index()
+# Recompute proper 'prob.gender' values
+combined['prob.gender'] = combined.apply(lambda row: "Male" if (row['count.male'] / (row['count.male'] + row['count.female'])) >= 0.5 else "Female", axis=1)
+combined.to_csv('output/GenderDictionary_USandUK.csv', index=None)
+
+for name in combined.Name:
     name = name.lower()
     if name in top_words:
         top_words.remove(name)
+
 
 # Clean entries
 CUSTOM = ['', 'nan', 'male']
@@ -72,8 +86,8 @@ def make_df_from_dict(dict):
     return pd.DataFrame.from_dict(dict).sort_values(by=[0])
 
 first_df = make_df_from_dict(first_name_dict)
-first_df.to_csv('output/JRC_First.txt', header=None, index=None, sep=' ')
+first_df.to_csv('output/Names_JRC_First.txt', header=None, index=None, sep=' ')
 last_df = make_df_from_dict(last_name_dict)
-last_df.to_csv('output/JRC_Last.txt', header=None, index=None, sep=' ')
+last_df.to_csv('output/Nanes_JRC_Last.txt', header=None, index=None, sep=' ')
 name_df = make_df_from_dict(name_dict)
-name_df.to_csv('output/JRC_Combined.txt', header=None, index=None, sep=' ')
+name_df.to_csv('output/Names_JRC_Combined.txt', header=None, index=None, sep=' ')

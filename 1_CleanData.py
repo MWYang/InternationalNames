@@ -49,16 +49,21 @@ combined = pd.concat([us, uk]).groupby('Name').agg({
 # Recompute proper 'prob.gender' values
 combined['prob.gender'] = combined.apply(lambda row: "Male" if (row['count.male'] / (row['count.male'] + row['count.female'])) >= 0.5 else "Female", axis=1)
 combined.to_csv('output/GenderDictionary_USandUK.csv', index=None)
-
 for name in combined.Name:
     name = name.lower()
     if name in top_words:
         top_words.remove(name)
 
 
+# Load a list of US cities by population, to remove both states and populous cities from the JRC dataset
+us_cities = pd.read_csv('/Users/michael.yang/Workspace/InternationalNames/input/top_1000_us_cities.txt', skiprows=[0, 1, 2, 4] + list(range(1005, 1031)))
+states = [word for sublist in list(map(lambda x: x.lower().split(' '), us_cities.state.unique())) for word in sublist]
+NUM_TOP_CITIES = 1000
+cities = [word for sublist in list(map(lambda x: x.lower().split(' '), us_cities.city.values[:NUM_TOP_CITIES])) for word in sublist]
+
 # Clean entries
 CUSTOM = ['', 'nan', 'male']
-REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + list(top_words) + CUSTOM
+REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + list(top_words) + states + cities + CUSTOM
 removed = []
 for c in REMOVE_LIST:
     try:
@@ -77,9 +82,6 @@ for c in REMOVE_LIST:
 
 print(f"Number of words removed: {len(removed)}")
 pd.DataFrame.from_dict({'removed': removed}).to_csv('output/RemovedWords.txt', header=None, index=None, sep=' ')
-
-# Combine the entries by unioning over the sets
-# name_dict = first_name_dict | last_name_dict
 
 # Write to file
 def make_df_from_dict(dict):

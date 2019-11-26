@@ -55,11 +55,14 @@ for name in combined.Name:
         top_words.remove(name)
 
 
+def process_list_of_exclusions(lst):
+    return [word for sublist in list(map(lambda x: x.lower().split(' '), lst)) for word in sublist]
+
 # Load a list of US cities by population, to remove both states and populous cities from the JRC dataset
-us_cities = pd.read_csv('/Users/michael.yang/Workspace/InternationalNames/input/top_1000_us_cities.txt', skiprows=[0, 1, 2, 4] + list(range(1005, 1031)))
-states = [word for sublist in list(map(lambda x: x.lower().split(' '), us_cities.state.unique())) for word in sublist]
+us_cities = pd.read_csv('input/top_1000_us_cities.txt', skiprows=[0, 1, 2, 4] + list(range(1005, 1031)))
+states = process_list_of_exclusions(us_cities.state.unique())
 NUM_TOP_CITIES = 1000
-cities = [word for sublist in list(map(lambda x: x.lower().split(' '), us_cities.city.values[:NUM_TOP_CITIES])) for word in sublist]
+cities = process_list_of_exclusions(us_cities.city.values[:NUM_TOP_CITIES])
 
 # Clean entries
 CUSTOM = ['', 'nan', 'male']

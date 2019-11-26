@@ -1126,7 +1126,6 @@ afrasiyab
 afrasiyao
 afrasyab
 afredo
-africa
 africaborn
 afrika
 afrikacumhuriyeti
@@ -4190,7 +4189,6 @@ argel
 argelio
 argemiro
 argenis
-argentina
 argentino
 argentyny
 argimiro
@@ -5948,7 +5946,6 @@ barboře
 barbra
 barbre
 barbro
-barbuda
 barby
 barcak
 barchar
@@ -7670,7 +7667,6 @@ bolewa
 bolgar
 bolgár
 bolivar
-bolivia
 bolko
 bolla
 bolo
@@ -8627,7 +8623,6 @@ cabbar
 cabdulaahi
 cabir
 cable
-cabo
 cabot
 cabral
 caca
@@ -8806,7 +8801,6 @@ camões
 can
 cana
 canaan
-canada
 canan
 canberk
 canbey
@@ -9393,7 +9387,6 @@ censu
 centa
 centeno
 centinel
-central
 cenu
 ceny
 ceon
@@ -9469,7 +9462,6 @@ chabuca
 chace
 chacha
 chacho
-chad
 chada
 chadd
 chadi
@@ -9898,7 +9890,6 @@ chimaroke
 chimene
 chimène
 chin
-china
 chinedu
 chinedum
 ching
@@ -11186,7 +11177,6 @@ cuauhtemoc
 cuauhtemóc
 cuauhtémoc
 cub
-cuba
 cuban
 cuca
 cucho
@@ -11208,7 +11198,6 @@ cumhuriyetçi
 cunda
 cuneyd
 cuneyt
-cunha
 cunjiang
 cunningham
 cuno
@@ -11373,7 +11362,6 @@ cătălina
 cătălinivan
 cătălinmarian
 cınar
-da
 daad
 daaf
 daan
@@ -13246,7 +13234,6 @@ domingoroma
 domingos
 dominguez
 dominic
-dominica
 dominick
 dominico
 dominicque
@@ -17348,7 +17335,6 @@ francaishenri
 francaois
 francas
 franccois
-france
 franceafrique
 francelino
 francena
@@ -17729,7 +17715,6 @@ freman
 fremelinda
 frenak
 frenando
-french
 frene
 frenk
 frenreisz
@@ -18379,7 +18364,6 @@ gaynell
 gaynor
 gayton
 gaz
-gaza
 gazal
 gazali
 gazanfer
@@ -22735,7 +22719,6 @@ holmes
 holocaustleugner
 holoda
 holt
-holy
 homa
 homan
 homare
@@ -22752,7 +22735,6 @@ honami
 honey
 honeylet
 honfi
-hong
 hongbin
 hongchao
 hongjie
@@ -22939,7 +22921,6 @@ howardsmith
 howe
 howell
 howie
-howland
 howon
 hoyshar
 hoyt
@@ -23846,8 +23827,6 @@ inderjeet
 inderjit
 indermeet
 indhriana
-india
-indian
 indianare
 indiasergio
 indigo
@@ -24098,7 +24077,6 @@ irakli
 iraklij
 irakly
 iram
-iran
 irane
 iranildo
 iranyi
@@ -24355,7 +24333,6 @@ isole
 isolina
 isoroku
 isra
-israel
 israelita
 israfil
 israël
@@ -24975,7 +24952,6 @@ jama
 jamaal
 jamael
 jamahl
-jamaica
 jamal
 jamala
 jamaleddine
@@ -25052,7 +25028,6 @@ jamshedji
 jamsheed
 jamuel
 jamy
-jan
 jana
 janaage
 janaake
@@ -25446,7 +25421,6 @@ jarryd
 jaruslav
 jaruvan
 jaruzelski
-jarvis
 jarzinho
 jarábik
 jas
@@ -26938,7 +26912,6 @@ johnphilip
 johnragnar
 johnsonsirleaf
 johnstewart
-johnston
 johnterry
 johnthony
 johnthor
@@ -29287,7 +29260,6 @@ kenty
 kenu
 kenwyne
 keny
-kenya
 kenyane
 kenyatta
 kenye
@@ -30209,7 +30181,6 @@ kondrát
 kondás
 kone
 koneru
-kong
 konimba
 koning
 koningjuan
@@ -31818,7 +31789,6 @@ leonardzie
 leonas
 leonce
 leoncio
-leone
 leonel
 leonela
 leonella
@@ -32813,7 +32783,6 @@ lucho
 luchom
 luchu
 luci
-lucia
 luciaborsellino
 luciamutikani
 lucian
@@ -33359,7 +33328,6 @@ maarleen
 maarof
 maarouf
 maart
-maarten
 maartena
 maarti
 maartijem
@@ -33981,7 +33949,6 @@ malaquias
 malaquías
 malaury
 malayah
-malaysia
 malca
 malco
 malcolm
@@ -34001,7 +33968,6 @@ maleter
 malezji
 malfrid
 malgorzata
-mali
 malia
 malick
 malietoa
@@ -34108,7 +34074,6 @@ mamuka
 mamun
 mamunur
 mamy
-man
 mana
 manabu
 manaf
@@ -34664,7 +34629,6 @@ mariame
 mariamiller
 mariamonteleone
 marian
-mariana
 mariane
 marianela
 marianella
@@ -34958,7 +34922,6 @@ marinho
 marini
 marinka
 marinko
-marino
 marinoelle
 marinor
 marinovich
@@ -35240,7 +35203,6 @@ marsh
 marsha
 marshae
 marshal
-marshall
 marshawn
 marshevet
 marshhall
@@ -35275,7 +35237,6 @@ martiijn
 martija
 martijn
 martim
-martin
 martina
 martinalba
 martinas
@@ -36005,7 +35966,6 @@ mccollum
 mccormick
 mccoy
 mccrae
-mcdonald
 mcebisi
 mcgeorge
 mcgowan
@@ -37881,7 +37841,6 @@ montia
 montie
 montrezl
 montse
-montserrat
 montxo
 monty
 monus
@@ -40223,7 +40182,6 @@ nigelfarage
 nigell
 nigella
 nigelu
-nigeria
 nighat
 nigma
 nigmatilla
@@ -41077,7 +41035,6 @@ oby
 občine
 ocansey
 ocasio
-ocean
 oceane
 ocimar
 ockert
@@ -41616,7 +41573,6 @@ omaid
 omaima
 omair
 omamofe
-oman
 omar
 omara
 omarem
@@ -43397,7 +43353,6 @@ pieros
 pierpalo
 pierpaolo
 pierra
-pierre
 pierrealain
 pierrealbert
 pierrealexandre
@@ -44037,7 +43992,6 @@ princesses
 princeton
 princewilliam
 princeza
-principe
 principesa
 principessa
 principewilliam
@@ -45494,7 +45448,6 @@ redžeps
 ree
 reece
 reed
-reef
 reekado
 reem
 reema
@@ -45892,7 +45845,6 @@ ribeiro
 ribeirão
 ribányi
 ric
-rica
 rical
 ricard
 ricarda
@@ -45951,7 +45903,6 @@ rickky
 ricky
 rickyjean
 rickymartin
-rico
 ricoaleix
 ricoperez
 ricopérez
@@ -47114,7 +47065,6 @@ ruşen
 ruştu
 ruža
 ružica
-rwanda
 ry
 rya
 ryad
@@ -47524,7 +47474,6 @@ sagyibó
 sahana
 sahand
 sahar
-sahara
 sahba
 sahbi
 saheb
@@ -47583,7 +47532,6 @@ saim
 saima
 saime
 saina
-saint
 saiosi
 saip
 saiqa
@@ -47743,7 +47691,6 @@ salud
 salum
 salustiano
 salva
-salvador
 salvadora
 salvadoras
 salvadordali
@@ -48021,7 +47968,6 @@ sanyam
 sanye
 sanz
 sanĉo
-sao
 saoed
 saoedier
 saoediër
@@ -48202,7 +48148,6 @@ sauat
 saud
 sauda
 saude
-saudi
 saugata
 saukat
 saul
@@ -48420,7 +48365,6 @@ scripcaru
 scultety
 scultéty
 se
-sea
 seab
 seabra
 seac
@@ -50209,7 +50153,6 @@ sinkó
 sinkókáli
 sinne
 sinola
-sint
 sinus
 sinval
 sinzo
@@ -50583,7 +50526,6 @@ solo
 solobodan
 soloman
 solomane
-solomon
 solomons
 solomón
 solon
@@ -50820,7 +50762,6 @@ souruv
 sousa
 sousan
 soussan
-southern
 souvenir
 souza
 sovan
@@ -50890,7 +50831,6 @@ srećko
 srečko
 srgjan
 srgjana
-sri
 srichand
 sridevi
 sridhar
@@ -51390,7 +51330,6 @@ suciu
 sucker
 sud
 sudafricaine
-sudan
 sudarat
 sudarshan
 sude
@@ -52571,7 +52510,6 @@ taj
 taja
 tajay
 taji
-tajikistan
 tajima
 tajip
 tajo
@@ -53486,7 +53424,6 @@ thage
 thai
 thaigo
 thaila
-thailand
 thair
 thais
 thaisa
@@ -54232,7 +54169,6 @@ tombong
 tombor
 tomcato
 tomcohen
-tome
 tomeirik
 tomek
 tomem
@@ -54680,7 +54616,6 @@ trindade
 trine
 trinh
 trini
-trinidad
 trinidade
 trinity
 trinka
@@ -54694,7 +54629,6 @@ trisha
 trisia
 trista
 tristam
-tristan
 tristana
 tristane
 tristao
@@ -54937,7 +54871,6 @@ turker
 turkeş
 turki
 turkmen
-turkmenistan
 turlough
 turner
 turnermike
@@ -56562,7 +56495,6 @@ virgiliu
 virgilius
 virgill
 virgillo
-virgin
 virgina
 virgine
 virginie
@@ -57127,7 +57059,6 @@ wajihudin
 wajiihuddin
 wakana
 wakar
-wake
 wakefield
 wakil
 wakili
@@ -57189,7 +57120,6 @@ walled
 wallerand
 walleyrand
 wallid
-wallis
 walliser
 wallter
 wally
@@ -59253,7 +59183,6 @@ zdzislaw
 zdzisław
 zdzisława
 ze
-zealand
 zeb
 zebenzui
 zebenzuí

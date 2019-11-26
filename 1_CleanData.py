@@ -64,9 +64,12 @@ states = process_list_of_exclusions(us_cities.state.unique())
 NUM_TOP_CITIES = 1000
 cities = process_list_of_exclusions(us_cities.city.values[:NUM_TOP_CITIES])
 
+# Load a list of countries to remove from the JRC dataset
+countries = process_list_of_exclusions(pd.read_csv('input/countries_by_area.txt')['Name'].values)
+
 # Clean entries
 CUSTOM = ['', 'nan', 'male']
-REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + list(top_words) + states + cities + CUSTOM
+REMOVE_LIST = list(string.ascii_lowercase) + [str(i) for i in range(10)] + list(top_words) + states + cities + countries + CUSTOM
 removed = []
 for c in REMOVE_LIST:
     try:
@@ -82,6 +85,10 @@ for c in REMOVE_LIST:
         last_name_dict.remove(c)
     except KeyError as e:
         continue
+
+# The country of Saint Vincent removes "Vincent" from our dataset
+name_dict.add('vincent')
+first_name_dict.add('vincent')
 
 print(f"Number of words removed: {len(removed)}")
 pd.DataFrame.from_dict({'removed': removed}).to_csv('output/RemovedWords.txt', header=None, index=None, sep=' ')

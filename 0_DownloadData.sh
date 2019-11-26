@@ -13,3 +13,5 @@ wget https://github.com/first20hours/google-10000-english/raw/master/google-1000
 wget https://github.com/first20hours/google-10000-english/raw/master/google-10000-english.txt
 
 wget https://gist.githubusercontent.com/Miserlou/11500b2345d3fe850c92/raw/e36859a9eef58c231865429ade1c142a2b75f16e/gistfile1.txt -O 'top_1000_us_cities.txt'
+
+wget https://raw.githubusercontent.com/thewiremonkey/factbook.csv/master/data/c2147.csv -O 'countries_by_area.txt'

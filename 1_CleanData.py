@@ -54,18 +54,17 @@ for name in combined.Name:
     if name in top_words:
         top_words.remove(name)
 
-
-def process_list_of_exclusions(lst):
+def process_list_of_untokenized_words(lst):
     return [word for sublist in list(map(lambda x: x.lower().split(' '), lst)) for word in sublist]
 
 # Load a list of US cities by population, to remove both states and populous cities from the JRC dataset
 us_cities = pd.read_csv('input/top_1000_us_cities.txt', skiprows=[0, 1, 2, 4] + list(range(1005, 1031)))
-states = process_list_of_exclusions(us_cities.state.unique())
+states = process_list_of_untokenized_words(us_cities.state.unique())
 NUM_TOP_CITIES = 1000
-cities = process_list_of_exclusions(us_cities.city.values[:NUM_TOP_CITIES])
+cities = process_list_of_untokenized_words(us_cities.city.values[:NUM_TOP_CITIES])
 
 # Load a list of countries to remove from the JRC dataset
-countries = process_list_of_exclusions(pd.read_csv('input/countries_by_area.txt')['Name'].values)
+countries = process_list_of_untokenized_words(pd.read_csv('input/countries_by_area.txt')['Name'].values)
 
 # Clean entries
 CUSTOM = ['', 'nan', 'male']

@@ -32,27 +32,6 @@ NUM_TOP = None
 english_words = set(pd.read_csv('input/google-10000-english.txt', header=None, nrows=NUM_TOP)[0].values)
 america_words = set(pd.read_csv('input/google-10000-english-usa.txt', header=None, nrows=NUM_TOP)[0].values)
 top_words = english_words | america_words
-# ... But we also need to remove words from this data that themselves are names. To do that,
-# we'll use a cleaner source of names (but with less coverage): US/UK government birth registries
-us = pd.read_csv('input/usprocessed.csv')
-uk = pd.read_csv('input/ukprocessed.csv', error_bad_lines=False)
-combined = pd.concat([us, uk]).groupby('Name').agg({
-    'years.appearing': 'sum',
-    'count.male': 'sum',
-    'count.female': 'sum',
-    'prob.gender': 'first',
-    'obs.male': 'mean',
-    'est.male': 'mean',
-    'upper': 'mean',
-    'lower': 'mean'
-}).reset_index()
-# Recompute proper 'prob.gender' values
-combined['prob.gender'] = combined.apply(lambda row: "Male" if (row['count.male'] / (row['count.male'] + row['count.female'])) >= 0.5 else "Female", axis=1)
-combined.to_csv('output/GenderDictionary_USandUK.csv', index=None)
-for name in combined.Name:
-    name = name.lower()
-    if name in top_words:
-        top_words.remove(name)
 
 def process_list_of_untokenized_words(lst):
     return [word for sublist in list(map(lambda x: x.lower().split(' '), lst)) for word in sublist]
@@ -85,12 +64,32 @@ for c in REMOVE_LIST:
     except KeyError as e:
         continue
 
-# The country of Saint Vincent removes "Vincent" from our dataset
-name_dict.add('vincent')
-first_name_dict.add('vincent')
-
 print(f"Number of words removed: {len(removed)}")
 pd.DataFrame.from_dict({'removed': removed}).to_csv('output/RemovedWords.txt', header=None, index=None, sep=' ')
+
+# Throughout this process, we may have removed some common names like "Elizabeth" or "Vincent"
+# We'll use a cleaner source of names (but with less coverage), US/UK government birth registries,
+# to add these names back to our lists
+us = pd.read_csv('input/usprocessed.csv')
+uk = pd.read_csv('input/ukprocessed.csv', error_bad_lines=False)
+combined = pd.concat([us, uk]).groupby('Name').agg({
+    'years.appearing': 'sum',
+    'count.male': 'sum',
+    'count.female': 'sum',
+    'prob.gender': 'first',
+    'obs.male': 'mean',
+    'est.male': 'mean',
+    'upper': 'mean',
+    'lower': 'mean'
+}).reset_index()
+# Recompute proper 'prob.gender' values
+combined['prob.gender'] = combined.apply(lambda row: "Male" if (row['count.male'] / (row['count.male'] + row['count.female'])) >= 0.5 else "Female", axis=1)
+combined.to_csv('output/GenderDictionary_USandUK.csv', index=None)
+for name in combined.Name:
+    name = name.lower()
+    name_dict.add(name)
+    first_name_dict.add(name)
+    last_name_dict.add(name)
 
 # Write to file
 def make_df_from_dict(dict):
